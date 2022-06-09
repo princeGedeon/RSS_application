@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'article.dart';
+import 'modeles/article.dart';
 
 class DetailPage extends StatefulWidget{
   Article article;

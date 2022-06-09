@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rss_app/HomePage.dart';
 
+import 'controllers/home_controllers.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: "Application de flux RSS")
+      home: HomeController(),
     );
   }
 }
