@@ -3,6 +3,7 @@ import 'package:rss_app/modeles/article.dart';
 import 'package:rss_app/vues/descrition_text.dart';
 import 'package:rss_app/vues/image_view.dart';
 import 'package:rss_app/vues/title_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../vues/my_padd.dart';
 
@@ -26,14 +27,18 @@ class DetailController extends StatelessWidget{
 
             DescText(desc: article.desc),
             Padd(),
-            ElevatedButton(onPressed: (){
-
-            }, child: const Text("Vers l'article complet"))
+            ElevatedButton(onPressed: handleToWeb, child: const Text("Vers l'article complet"))
             
           ],
         ),
       ),
     );
   }
-  
+
+  void handleToWeb() async{
+    if (await canLaunch(article.urllink)){
+      await launch(article.urllink);
+    }
+
+  }
 }
